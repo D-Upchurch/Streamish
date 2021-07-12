@@ -18,7 +18,7 @@ namespace Streamish.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                            SELECT Id, [Name], Email, ImageUrl, DateCreated FROM UserProfile ";
+                            SELECT Id, [Name], Email, ImageUrl, DateCreated, isDeleted FROM UserProfile WHERE isDeleted=0 ";
 
                     var reader = cmd.ExecuteReader();
 
@@ -178,7 +178,9 @@ namespace Streamish.Repositories
                 conn.Open();
                 using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = "DELETE FROM UserProfile WHERE Id= @id";
+                    cmd.CommandText = @"UPDATE UserProfile
+                                        SET isDeleted=1
+                                        WHERE Id= @id";
                     DbUtils.AddParameter(cmd, "@id", id);
                     cmd.ExecuteNonQuery();
                 }
