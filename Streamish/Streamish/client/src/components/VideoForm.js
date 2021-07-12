@@ -28,7 +28,7 @@ const VideoForm = () => {
                 title: "",
                 description: "",
                 url: ""
-            })).then(() => history.push("/videos"))
+            })).then(() => history.push("/"))
     };
 
     return (
