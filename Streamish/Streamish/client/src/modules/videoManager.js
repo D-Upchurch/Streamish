@@ -19,3 +19,8 @@ export const addVideo = (video) => {
         body: JSON.stringify(video),
     });
 };
+
+export const searchVideos = (input, bool) => {
+    return fetch(`${baseUrl}/search?title=${input}&sortDesc=${bool}`)
+        .then(res => res.json())
+};
