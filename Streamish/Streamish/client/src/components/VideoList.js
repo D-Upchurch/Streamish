@@ -61,7 +61,7 @@ const VideoList = () => {
                 </div>
                 <div className="row justify-content-center">
                     {videos.map((video) => (
-                        <Video video={video} key={video.id} />
+                        <Video video={video} key={video.id} comments={video.comments} />
                     ))}
                 </div>
             </div>

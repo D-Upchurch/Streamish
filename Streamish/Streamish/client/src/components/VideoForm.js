@@ -35,28 +35,6 @@ const VideoForm = () => {
         <form className="videoForm">
             <h2 className="videoForm__title">New Video</h2>
             <fieldset>
-                <div>
-                    <input
-                        type="hidden"
-                        id="dateCreated"
-                        onChange={handleFieldChange}
-                        required autoFocus
-                        className="form-control"
-                        value={video.dateCreated} />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div>
-                    <input
-                        type="hidden"
-                        id="userProfileId"
-                        onChange={handleFieldChange}
-                        required autoFocus
-                        className="form-control"
-                        value={video.userProfileId} />
-                </div>
-            </fieldset>
-            <fieldset>
                 <div className="form-group">
                     <label htmlFor="title">Title:</label>
                     <input

@@ -20,7 +20,13 @@ export const addVideo = (video) => {
     });
 };
 
+
+
 export const searchVideos = (input, bool) => {
     return fetch(`${baseUrl}/search?title=${input}&sortDesc=${bool}`)
         .then(res => res.json())
+};
+
+export const getVideo = (id) => {
+    return fetch(`${baseUrl}/${id}`).then((res) => res.json());
 };
